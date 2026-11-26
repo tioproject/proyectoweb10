@@ -1,0 +1,14 @@
+[
+  {
+    "curso": "Física • Dinámica",
+    "alumno": "Consulta en grupo",
+    "pregunta": "Si un bloque sube por un plano inclinado rugoso con velocidad constante, ¿la fuerza neta es cero o existe fuerza resultante hacia abajo?",
+    "explicacion": "Si avanza con velocidad constante (MRU/traslación uniforme), su aceleración es cero ($a = 0$), por lo que por Segunda Ley de Newton $\\sum \\vec{F} = 0$. El rozamiento cinético se opone al deslizamiento (va hacia abajo), sumándose a la componente del peso paralela al plano, y ambas son equilibradas por la fuerza que impulsa el ascenso."
+  },
+  {
+    "curso": "Álgebra • Funciones",
+    "alumno": "Duda de práctica",
+    "pregunta": "¿Para hallar el rango de $f(x) = \\frac{x^2 + 1}{x^2 + 2}$ basta despejar $x$ y analizar el discriminante?",
+    "explicacion": "Sí, siempre que respetes que $x \\in \\text{Dom}(f)$. Como $x^2 \\ge 0$, el denominador $x^2 + 2 \\ge 2 > 0$, así que el dominio es todo $\\mathbb{R}$. Escribiendo $f(x) = 1 - \\frac{1}{x^2 + 2}$, al variar $x^2 \\in [0, +\\infty\\rangle$ se obtiene $f(x) \\in [\\frac{1}{2}, 1\\rangle$."
+  }
+]

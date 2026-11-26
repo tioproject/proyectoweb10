@@ -1,0 +1,26 @@
+[
+  {
+    "titulo": "Solucionarios CEPRE-Villarreal (UNFV)",
+    "curso": "Todos los cursos",
+    "nivel": "Solucionarios",
+    "universidad": "UNFV • CEPREVI",
+    "descripcion": "Carpeta oficial con solucionarios del Libro Ceprevi y ciclos Ceprevi 2023 A / 2023 B.",
+    "url": "https://drive.google.com/drive/folders/1km7dlbYKDLAQtcy-km9bVmYAvgLQHowx"
+  },
+  {
+    "titulo": "Repositorio UNI (CEPREUNI + Boletines Vallejo)",
+    "curso": "Todos los cursos",
+    "nivel": "Tipo UNI",
+    "universidad": "UNI",
+    "descripcion": "Acceso directo a CepreUNI 2027-I, Vallejo 2026-2, Vallejo Antaño, libros y material virtual de práctica.",
+    "url": "https://drive.google.com/drive/folders/167S3641bfG6OpE5ap5q5dDmmHnlIF4DZ"
+  },
+  {
+    "titulo": "Repositorio San Marcos (PreSM 2026-II / 2026-I + DECO)",
+    "curso": "Todos los cursos",
+    "nivel": "DECO (UNMSM)",
+    "universidad": "UNMSM",
+    "descripcion": "Solucionarios PreSM 2026-II, 2026-I, Cepre-San Marcos y banco de problemas para practicar.",
+    "url": "https://drive.google.com/drive/folders/1Ty7rl_24eN2UC1SeWdQmkIRheJQ1cGr0"
+  }
+]

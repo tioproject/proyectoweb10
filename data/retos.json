@@ -1,0 +1,402 @@
+[
+  {
+    "tag": "FÍSICA • CINEMÁTICA",
+    "question": "Un móvil parte del origen en línea recta con velocidad $v_0 = +20\\text{ m/s}$ y aceleración constante $a = -4\\text{ m/s}^2$. ¿Cuál es el recorrido total (distancia recorrida) durante los primeros $8\\text{ s}$?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$32\\text{ m}$"
+      },
+      {
+        "id": "B",
+        "text": "$68\\text{ m}$"
+      },
+      {
+        "id": "C",
+        "text": "$50\\text{ m}$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "La trampa es calcular el desplazamiento ($d = 20(8) - 2(64) = +32\\text{ m}$). El móvil se detiene en $t = 5\\text{ s}$ avanzando $50\\text{ m}$, y en los $3\\text{ s}$ restantes retrocede $18\\text{ m}$. El recorrido total es $50 + 18 = 68\\text{ m}$."
+  },
+  {
+    "tag": "FÍSICA • ESTÁTICA",
+    "question": "Un bloque de $10\\text{ kg}$ reposa sobre un plano inclinado rugoso que forma $37^\\circ$ con la horizontal ($\\mu_s = 0.8$, $\\mu_k = 0.5$, $g = 10\\text{ m/s}^2$). ¿Cuál es el módulo de la fuerza de rozamiento que actúa sobre el bloque?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$64\\text{ N}$"
+      },
+      {
+        "id": "B",
+        "text": "$40\\text{ N}$"
+      },
+      {
+        "id": "C",
+        "text": "$60\\text{ N}$"
+      }
+    ],
+    "correct": "C",
+    "explanation": "La fuerza que intenta deslizarlo es $mg\\sin 37^\\circ = 60\\text{ N}$, mientras que el rozamiento estático máximo es $f_{s,\\text{máx}} = 0.8(80) = 64\\text{ N}$. Como $60\\text{ N} < 64\\text{ N}$, el bloque no se mueve y el rozamiento estático iguala a la componente tangencial: $60\\text{ N}$."
+  },
+  {
+    "tag": "FÍSICA • ELECTROSTÁTICA",
+    "question": "Se tienen dos esferas conductoras idénticas con cargas $q_1 = +10\\text{ }\\mu\\text{C}$ y $q_2 = -4\\text{ }\\mu\\text{C}$ separadas cierta distancia. Si se ponen en contacto y luego se vuelven a separar la misma distancia inicial, ¿qué sucede con el módulo de la fuerza eléctrica entre ellas?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Se reduce a la novena parte y pasa a ser repulsiva"
+      },
+      {
+        "id": "B",
+        "text": "Se reduce a $\\frac{9}{40}$ del valor inicial y sigue siendo atractiva"
+      },
+      {
+        "id": "C",
+        "text": "Se reduce a $\\frac{9}{40}$ del valor inicial y pasa a ser repulsiva"
+      }
+    ],
+    "correct": "C",
+    "explanation": "Al tocarse, la carga neta ($+6\\text{ }\\mu\\text{C}$) se reparte en partes iguales ($+3\\text{ }\\mu\\text{C}$ cada una), volviéndose repulsiva. El producto de cargas cambia de $|(+10)(-4)| = 40$ a $|(+3)(+3)| = 9$, reduciendo la fuerza a $\\frac{9}{40}$."
+  },
+  {
+    "tag": "FÍSICA • HIDROSTÁTICA",
+    "question": "Un bloque de madera de densidad $0.6\\text{ g/cm}^3$ flota en equilibrio dentro de un recipiente con agua ($\\rho_{\\text{agua}} = 1\\text{ g/cm}^3$) ubicado en un ascensor que sube con aceleración constante $a = 2\\text{ m/s}^2$. ¿Qué porcentaje del volumen del bloque permanece sumergido?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$60\\%$"
+      },
+      {
+        "id": "B",
+        "text": "$72\\%$"
+      },
+      {
+        "id": "C",
+        "text": "$50\\%$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "En un marco acelerado, tanto el peso aparente como el empuje dependen de la gravedad efectiva $g_{\\text{ef}} = g + a$. Al igualar $E = W_{\\text{ap}}$, $g_{\\text{ef}}$ se cancela en ambos miembros y la fracción sumergida sigue siendo $\\frac{\\rho_{\\text{cuerpo}}}{\\rho_{\\text{líquido}}} = 0.60$ ($60\\%$)."
+  },
+  {
+    "tag": "ÁLGEBRA • ECUACIONES",
+    "question": "Resuelva en $\\mathbb{R}$ la ecuación irracional $\\sqrt{x + 2} = -x$ e indique el producto de sus soluciones reales.",
+    "options": [
+      {
+        "id": "A",
+        "text": "$-2$"
+      },
+      {
+        "id": "B",
+        "text": "$-1$"
+      },
+      {
+        "id": "C",
+        "text": "$2$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "La raíz cuadrada principal exige $-x \\ge 0 \\implies x \\le 0$. Al elevar al cuadrado se obtiene $x^2 - x - 2 = 0$, cuyas raíces son $x = 2$ y $x = -1$. Descartando $x = 2$ por restricción de signo, la única solución es $x = -1$."
+  },
+  {
+    "tag": "ÁLGEBRA • INECUACIONES",
+    "question": "Determine la suma de los valores enteros que verifican la inecuación $\\frac{(x - 2)^2 (x - 5)}{x - 1} \\le 0$.",
+    "options": [
+      {
+        "id": "A",
+        "text": "$14$"
+      },
+      {
+        "id": "B",
+        "text": "$15$"
+      },
+      {
+        "id": "C",
+        "text": "$12$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Por puntos críticos, $x \\in \\langle 1; 5]$. La trampa clásica es incluir $x = 1$ (anula el denominador) u olvidar $x = 2$ (aunque ya está dentro del intervalo $\\langle 1; 5]$). Los enteros válidos son $2, 3, 4, 5$, cuya suma es $14$."
+  },
+  {
+    "tag": "ÁLGEBRA • LOGARITMOS",
+    "question": "Halle el conjunto solución de la ecuación $\\log_2(x - 1) + \\log_2(x - 3) = 3$.",
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\{5; -1\\}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\{5\\}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\emptyset$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "El dominio de existencia exige $x - 1 > 0$ y $x - 3 > 0$, es decir, $x > 3$. Al resolver $(x - 1)(x - 3) = 2^3$ surgen $x = 5$ y $x = -1$, pero $x = -1$ queda fuera del dominio real del logaritmo."
+  },
+  {
+    "tag": "ÁLGEBRA • VALOR ABSOLUTO",
+    "question": "Si $x \\in \\langle -3; -1 \\rangle$, simplifique la expresión $M = \\frac{\\sqrt{x^2 + 6x + 9} + |2x + 1|}{x + 1}$.",
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{2 - x}{x + 1}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{3x + 4}{x + 1}$"
+      },
+      {
+        "id": "C",
+        "text": "$-1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Recuerda que $\\sqrt{(x+3)^2} = |x+3|$, no $x+3$. Como $-3 < x < -1$, se cumple $x + 3 > 0$ y $2x + 1 < 0$. Así, $|x+3| + |2x+1| = (x + 3) - (2x + 1) = 2 - x$."
+  },
+  {
+    "tag": "ARITMÉTICA • TEORÍA DE CONJUNTOS",
+    "question": "Dado el conjunto $A = \\{1; \\{2\\}; \\{1; 2\\}; 3\\}$, ¿cuántas de las siguientes proposiciones son verdaderas? I. $\\{2\\} \\subset A$  II. $\\{\\{2\\}\\} \\subset A$  III. $\\{1; 2\\} \\in A$  IV. $\\{1; 3\\} \\in A$",
+    "options": [
+      {
+        "id": "A",
+        "text": "$2$"
+      },
+      {
+        "id": "B",
+        "text": "$3$"
+      },
+      {
+        "id": "C",
+        "text": "$1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "La relación $\\in$ vincula elemento con conjunto, y $\\subset$ vincula subconjunto con conjunto. $\\{2\\}$ es elemento de $A$, por lo que $\\{\\{2\\}\\} \\subset A$ (II) es verdadera; además $\\{1; 2\\} \\in A$ (III) es verdadera. I y IV confunden pertenencia con inclusión."
+  },
+  {
+    "tag": "ARITMÉTICA • DIVISIBILIDAD",
+    "question": "¿Cuántos números enteros positivos de dos cifras son múltiplos de $4$ o múltiplos de $6$, pero no de ambos a la vez?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$21$"
+      },
+      {
+        "id": "B",
+        "text": "$29$"
+      },
+      {
+        "id": "C",
+        "text": "$37$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Entre $10$ y $99$ hay $22$ múltiplos de $4$ ($12$ al $96$) y $15$ múltiplos de $6$ ($12$ al $96$). Los múltiplos de ambos son los de $\\text{MCM}(4,6) = 12$, que son $8$ ($12$ al $96$). La diferencia simétrica es $(22 - 8) + (15 - 8) = 21$."
+  },
+  {
+    "tag": "ARITMÉTICA • PORCENTAJES",
+    "question": "Un comerciante fija el precio de un artículo aumentando su costo en un $50\\%$, pero al venderlo realiza dos descuentos sucesivos del $20\\%$ y $20\\%$. ¿Qué porcentaje del costo gana o pierde al final?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Gana el $10\\%$"
+      },
+      {
+        "id": "B",
+        "text": "Pierde el $4\\%$"
+      },
+      {
+        "id": "C",
+        "text": "No gana ni pierde ($0\\%$)"
+      }
+    ],
+    "correct": "B",
+    "explanation": "La trampa es sumar descuentos ($20\\% + 20\\% = 40\\%$) y restarlos al $150\\%$. El precio final es $150\\% \\times 0.8 \\times 0.8 = 96\\%$ del costo, lo que significa una pérdida neta del $4\\%$."
+  },
+  {
+    "tag": "TRIGONOMETRÍA • IDENTIDADES",
+    "question": "Si $\\sin x + \\cos x = \\sqrt{2}$, calcule el valor de $\\sin^3 x + \\cos^3 x$.",
+    "options": [
+      {
+        "id": "A",
+        "text": "$\\frac{\\sqrt{2}}{2}$"
+      },
+      {
+        "id": "B",
+        "text": "$\\frac{\\sqrt{2}}{4}$"
+      },
+      {
+        "id": "C",
+        "text": "$\\sqrt{2}$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Elevando al cuadrado $(\\sin x + \\cos x)^2 = 2 \\implies 1 + 2\\sin x\\cos x = 2 \\implies \\sin x\\cos x = \\frac{1}{2}$. Luego $\\sin^3 x + \\cos^3 x = (\\sin x + \\cos x)(1 - \\sin x\\cos x) = \\sqrt{2}\\left(1 - \\frac{1}{2}\\right) = \\frac{\\sqrt{2}}{2}$."
+  },
+  {
+    "tag": "TRIGONOMETRÍA • FUNCIONES INVERSAS",
+    "question": "Calcule el valor exacto de $E = \\arcsin\\left(\\sin\\frac{5\\pi}{6}\\right) + \\arccos\\left(\\cos\\frac{7\\pi}{6}\\right)$.",
+    "options": [
+      {
+        "id": "A",
+        "text": "$2\\pi$"
+      },
+      {
+        "id": "B",
+        "text": "$\\pi$"
+      },
+      {
+        "id": "C",
+        "text": "$\\frac{4\\pi}{3}$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "La trampa es cancelar directamente $\\arcsin(\\sin\\theta) = \\theta$. El rango de $\\arcsin$ es $\\left[-\\frac{\\pi}{2}; \\frac{\\pi}{2}\\right]$, por lo que $\\arcsin\\left(\\sin\\frac{5\\pi}{6}\\right) = \\frac{\\pi}{6}$. El rango de $\\arccos$ es $[0; \\pi]$, por lo que $\\arccos\\left(\\cos\\frac{7\\pi}{6}\\right) = \\frac{5\\pi}{6}$. Su suma es $\\pi$."
+  },
+  {
+    "tag": "TRIGONOMETRÍA • ECUACIONES",
+    "question": "¿Cuántas soluciones tiene la ecuación $\\tan(2x) = 1$ en el intervalo $[0; \\pi]$?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$1$"
+      },
+      {
+        "id": "B",
+        "text": "$2$"
+      },
+      {
+        "id": "C",
+        "text": "$4$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Si $x \\in [0; \\pi]$, entonces el argumento $2x \\in [0; 2\\pi]$. En una vuelta completa, la tangente toma el valor $1$ en dos ángulos: $2x = \\frac{\\pi}{4}$ y $2x = \\frac{5\\pi}{4}$, dando $x = \\frac{\\pi}{8}$ y $x = \\frac{5\\pi}{8}$."
+  },
+  {
+    "tag": "GEOMETRÍA • TRIÁNGULOS",
+    "question": "En un triángulo $ABC$, las longitudes de dos de sus lados son $AB = 5\\text{ cm}$ y $BC = 12\\text{ cm}$. Si el ángulo interior en $B$ es obtuso ($m\\angle ABC > 90^\\circ$), ¿cuántos valores enteros puede tomar la longitud del tercer lado $AC$?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$9$"
+      },
+      {
+        "id": "B",
+        "text": "$3$"
+      },
+      {
+        "id": "C",
+        "text": "$4$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Por existencia triangular, $7 < AC < 17$ ($9$ enteros). Pero el dato de ángulo obtuso exige $AC^2 > 5^2 + 12^2 = 169 \\implies AC > 13$. Así, $13 < AC < 17$, dejando solo $3$ valores enteros ($14, 15, 16$)."
+  },
+  {
+    "tag": "GEOMETRÍA • CIRCUNFERENCIA",
+    "question": "Desde un punto exterior $P$ a una circunferencia se trazan dos tangentes $PA$ y $PB$ ($A$ y $B$ puntos de tangencia). Si el ángulo $APB$ mide $50^\\circ$ y $Q$ es un punto cualquiera del arco mayor $AB$, ¿cuánto mide el ángulo inscrito $AQB$?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$65^\\circ$"
+      },
+      {
+        "id": "B",
+        "text": "$115^\\circ$"
+      },
+      {
+        "id": "C",
+        "text": "$130^\\circ$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "El ángulo exterior $APB$ y el arco menor $AB$ suman $180^\\circ$, por lo que el arco menor $AB$ mide $130^\\circ$. El ángulo inscrito $AQB$ subtiende dicho arco menor $AB$, así que mide la mitad: $\\frac{130^\\circ}{2} = 65^\\circ$."
+  },
+  {
+    "tag": "GEOMETRÍA • SÓLIDOS",
+    "question": "Si el radio de una esfera sólida se incrementa en un $100\\%$ (se duplica), ¿en qué porcentaje aumenta su volumen?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$700\\%$"
+      },
+      {
+        "id": "B",
+        "text": "$800\\%$"
+      },
+      {
+        "id": "C",
+        "text": "$300\\%$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Al duplicarse el radio ($R' = 2R$), el nuevo volumen es $V' = (2)^3 V = 8V$, es decir, el $800\\%$ del volumen inicial. La trampa de lectura es confundir 'en qué porcentaje se convierte' ($800\\%$) con 'en qué porcentaje aumenta' ($800\\% - 100\\% = 700\\%$)."
+  },
+  {
+    "tag": "QUÍMICA • ESTEQUIOMETRÍA",
+    "question": "Se hacen reaccionar $4\\text{ g}$ de $\\text{H}_2$ ($M = 2\\text{ g/mol}$) con $16\\text{ g}$ de $\\text{O}_2$ ($M = 32\\text{ g/mol}$) según $2\\text{H}_2 + \\text{O}_2 \\to 2\\text{H}_2\\text{O}$. ¿Cuántos gramos de agua ($M = 18\\text{ g/mol}$) se producen como máximo?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$20\\text{ g}$"
+      },
+      {
+        "id": "B",
+        "text": "$36\\text{ g}$"
+      },
+      {
+        "id": "C",
+        "text": "$18\\text{ g}$"
+      }
+    ],
+    "correct": "C",
+    "explanation": "La trampa es sumar las masas ($4 + 16 = 20\\text{ g}$) sin hallar el reactivo limitante. Tenemos $2\\text{ mol}$ de $\\text{H}_2$ y $0.5\\text{ mol}$ de $\\text{O}_2$. El limitante es el $\\text{O}_2$ ($0.5\\text{ mol}$), que produce $1\\text{ mol}$ de $\\text{H}_2\\text{O} = 18\\text{ g}$ (sobran $2\\text{ g}$ de $\\text{H}_2$)."
+  },
+  {
+    "tag": "QUÍMICA • ESTRUCTURA ATÓMICA",
+    "question": "Determine el número de electrones desapareados que presenta el catión trivalente de hierro, $\\text{Fe}^{3+}$ ($Z = 26$), en su estado basal.",
+    "options": [
+      {
+        "id": "A",
+        "text": "$5$"
+      },
+      {
+        "id": "B",
+        "text": "$3$"
+      },
+      {
+        "id": "C",
+        "text": "$1$"
+      }
+    ],
+    "correct": "A",
+    "explanation": "El átomo neutro $\\text{Fe}$ ($Z=26$) termina en $[\\text{Ar}]\\,4s^2\\,3d^6$. La trampa es quitar los $3$ electrones del subnivel $3d$; al ionizarse un metal de transición, primero salen los electrones del nivel más externo ($4s^2$) y luego uno de $3d$, quedando $[\\text{Ar}]\\,3d^5$ con $5$ electrones desapareados."
+  },
+  {
+    "tag": "QUÍMICA • SOLUCIONES",
+    "question": "¿Cuál es la normalidad ($\\text{N}$) de una solución acuosa $0.5\\text{ M}$ de ácido fosforoso, $\\text{H}_3\\text{PO}_3$, en una reacción de neutralización completa?",
+    "options": [
+      {
+        "id": "A",
+        "text": "$1.5\\text{ N}$"
+      },
+      {
+        "id": "B",
+        "text": "$1.0\\text{ N}$"
+      },
+      {
+        "id": "C",
+        "text": "$0.5\\text{ N}$"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Aunque la fórmula $\\text{H}_3\\text{PO}_3$ muestra tres hidrógenos, es una excepción clásica: solo dos están unidos a oxígeno (ionizables) y el tercero está unido directamente al fósforo. Por ello su parámetro $\\theta = 2$, y $N = M \\cdot \\theta = 0.5 \\times 2 = 1.0\\text{ N}$."
+  }
+]

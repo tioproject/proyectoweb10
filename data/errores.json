@@ -1,0 +1,462 @@
+[
+  {
+    "id": "ERR01",
+    "tag": "PROBLEMA • ÁLGEBRA / INECUACIONES RACIONALES",
+    "statement": "Resuelva en $\\mathbb{R}$ la siguiente inecuación racional: $$\\frac{x^2 - 4}{x - 2} > 0$$",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Factorizamos el numerador usando diferencia de cuadrados: $$\\frac{(x + 2)(x - 2)}{x - 2} > 0$$"
+      },
+      {
+        "num": 2,
+        "text": "Simplificamos el factor común $(x - 2)$ en el numerador y denominador: $$x + 2 > 0$$"
+      },
+      {
+        "num": 3,
+        "text": "Despejamos $x$ y concluimos que el conjunto solución es: $$x \\in \\langle -2; +\\infty \\rangle$$"
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "Al cancelar el factor $(x - 2)$ se pierde la restricción del Conjunto de Valores Admisibles (CVA), que exige $x - 2 \\neq 0 \\implies x \\neq 2$. El conjunto solución correcto debe excluir ese punto: $\\langle -2; +\\infty \\rangle - \\{2\\}$.",
+    "hintBody": "Cuando simplificas una expresión algebraica que contiene la incógnita en el denominador, ¿qué ocurre con los valores que anulan dicho denominador?"
+  },
+  {
+    "id": "ERR02",
+    "tag": "PROBLEMA • FÍSICA / CINEMÁTICA VERTICAL",
+    "statement": "Desde la azotea de un edificio de $45\\text{ m}$ de altura se lanza una piedra verticalmente hacia arriba con rapidez $v_0 = 20\\text{ m/s}$. Calcule el tiempo que tarda en llegar al suelo ($g = 10\\text{ m/s}^2$).",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Tomamos como origen el punto de lanzamiento con eje $+Y$ hacia arriba, planteando: $$\\Delta y = v_0 t + \\frac{1}{2} g t^2 \\implies 45 = 20t - 5t^2$$"
+      },
+      {
+        "num": 2,
+        "text": "Reordenamos la ecuación cuadrática dividiendo entre $5$: $$t^2 - 4t + 9 = 0$$"
+      },
+      {
+        "num": 3,
+        "text": "Analizamos el discriminante $\\Delta = (-4)^2 - 4(1)(9) = -20 < 0$ y concluimos que el problema no tiene solución real."
+      }
+    ],
+    "errorLine": 1,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 1.",
+    "successBody": "Si el eje $+Y$ apunta hacia arriba y el origen está en la azotea, el suelo se ubica $45\\text{ m}$ por debajo, por lo que el desplazamiento vertical es $\\Delta y = -45\\text{ m}$, no $+45\\text{ m}$. Con $-45 = 20t - 5t^2$ se obtiene $t^2 - 4t - 9 = 0$, que sí tiene raíz positiva.",
+    "hintBody": "Revisa cuidadosamente el sistema de referencia elegido en la primera línea: si el origen es el punto de lanzamiento y hacia arriba es positivo, ¿qué signo tiene la posición final en el suelo?"
+  },
+  {
+    "id": "ERR03",
+    "tag": "PROBLEMA • TRIGONOMETRÍA / IDENTIDADES",
+    "statement": "Simplifique la expresión trigonométrica $E = \\sqrt{1 - \\sin^2 x} + \\cos x$, sabiendo que el ángulo $x$ pertenece al tercer cuadrante ($x \\in \\text{III C}$).",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Aplicamos la identidad pitagórica fundamental $1 - \\sin^2 x = \\cos^2 x$: $$E = \\sqrt{\\cos^2 x} + \\cos x$$"
+      },
+      {
+        "num": 2,
+        "text": "Extraemos la raíz cuadrada del término cuadrático: $$E = \\cos x + \\cos x$$"
+      },
+      {
+        "num": 3,
+        "text": "Reducimos términos semejantes y obtenemos: $$E = 2\\cos x$$"
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "Por definición algebraica, $\\sqrt{\\cos^2 x} = |\\cos x|$. Como $x \\in \\text{III C}$, el coseno es negativo ($\\cos x < 0$), así que $|\\cos x| = -\\cos x$. Por lo tanto, $E = -\\cos x + \\cos x = 0$.",
+    "hintBody": "Recuerda que $\\sqrt{a^2} = |a|$ y presta atención al dato del cuadrante al que pertenece el ángulo $x$."
+  },
+  {
+    "id": "ERR04",
+    "tag": "PROBLEMA • GEOMETRÍA / TRIÁNGULOS",
+    "statement": "En un triángulo $ABC$, las longitudes de dos lados son $AB = 6\\text{ cm}$ y $BC = 9\\text{ cm}$. Si el ángulo interior en $B$ es agudo ($m\\angle ABC < 90^\\circ$), halle el mayor valor entero posible para el lado $AC$.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Aplicamos el teorema de la existencia triangular para el lado $AC$: $$9 - 6 < AC < 9 + 6 \\implies 3 < AC < 15$$"
+      },
+      {
+        "num": 2,
+        "text": "Dado que el ángulo $ABC$ es agudo, aplicamos la naturaleza del triángulo: $$AC^2 < 6^2 + 9^2 \\implies AC^2 < 117$$"
+      },
+      {
+        "num": 3,
+        "text": "Intersectando $3 < AC < 15$ con $AC < \\sqrt{117} \\approx 10.81$, concluimos que el mayor valor entero es $AC = 14\\text{ cm}$."
+      }
+    ],
+    "errorLine": 3,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 3.",
+    "successBody": "Al intersectar los intervalos $3 < AC < 15$ y $AC < 10.81$, prevalece la cota superior más restrictiva: $3 < AC < 10.81$. Por lo tanto, el mayor valor entero para $AC$ es $10\\text{ cm}$, no $14\\text{ cm}$.",
+    "hintBody": "Verifica la intersección de las dos desigualdades obtenidas en las líneas anteriores al elegir el máximo entero."
+  },
+  {
+    "id": "ERR05",
+    "tag": "PROBLEMA • ARITMÉTICA / TEORÍA DE CONJUNTOS",
+    "statement": "Dado el conjunto $M = \\{2; \\{3\\}; \\{2; 3\\}; 4\\}$, determine el valor de verdad de la proposición: $\\{3\\} \\subset M$.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Identificamos los elementos explícitos del conjunto $M$: son $2$, $\\{3\\}$, $\\{2; 3\\}$ y $4$."
+      },
+      {
+        "num": 2,
+        "text": "Como $\\{3\\}$ aparece listado dentro de las llaves de $M$, afirmamos que $\\{3\\} \\subset M$ es verdadera."
+      },
+      {
+        "num": 3,
+        "text": "Por consiguiente, concluimos que el valor de verdad de la proposición dada es Verdadero (V)."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "El símbolo $\\subset$ representa inclusión (subconjunto), no pertenencia ($\\in$). Como $\\{3\\}$ es un elemento directo de $M$, lo correcto es $\\{3\\} \\in M$. Para que sea subconjunto debe llevar doble llave: $\\{\\{3\\}\\} \\subset M$.",
+    "hintBody": "Distingue cuidadosamente entre la relación de pertenencia ($\\in$, elemento a conjunto) y la relación de inclusión ($\\subset$, conjunto a conjunto)."
+  },
+  {
+    "id": "ERR06",
+    "tag": "PROBLEMA • ÁLGEBRA / LOGARITMOS",
+    "statement": "Resuelva la siguiente ecuación logarítmica en los reales: $$\\log_3(x - 2) + \\log_3(x + 4) = 3$$",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Aplicamos la propiedad del logaritmo de un producto: $$\\log_3[(x - 2)(x + 4)] = 3$$"
+      },
+      {
+        "num": 2,
+        "text": "Convertimos a forma exponencial y desarrollamos: $$(x - 2)(x + 4) = 3^3 \\implies x^2 + 2x - 35 = 0$$"
+      },
+      {
+        "num": 3,
+        "text": "Factorizamos $(x + 7)(x - 5) = 0$ y concluimos que el conjunto solución es $CS = \\{-7; 5\\}$."
+      }
+    ],
+    "errorLine": 3,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 3.",
+    "successBody": "Se omitió verificar el dominio (CVA) de la ecuación original: $x - 2 > 0$ y $x + 4 > 0$, lo que exige $x > 2$. El valor $x = -7$ genera argumentos negativos en los logaritmos originales y debe descartarse. El conjunto solución es $CS = \\{5\\}$.",
+    "hintBody": "Antes de aceptar todas las raíces de la ecuación cuadrática, reemplázalas en la ecuación logarítmica inicial."
+  },
+  {
+    "id": "ERR07",
+    "tag": "PROBLEMA • FÍSICA / DINÁMICA LINEAL",
+    "statement": "Un bloque de $4\\text{ kg}$ reposa sobre una superficie horizontal rugosa ($\\mu_s = 0.6$, $\\mu_k = 0.4$, $g = 10\\text{ m/s}^2$). Si se le aplica una fuerza horizontal de $F = 20\\text{ N}$, determine el módulo de la fuerza de rozamiento que actúa sobre el bloque.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Calculamos la fuerza normal en el eje vertical: $$N = m \\cdot g = 4 \\cdot 10 = 40\\text{ N}$$"
+      },
+      {
+        "num": 2,
+        "text": "Calculamos la fuerza de rozamiento estático máximo: $$f_{s,\\text{máx}} = \\mu_s \\cdot N = 0.6 \\cdot 40 = 24\\text{ N}$$"
+      },
+      {
+        "num": 3,
+        "text": "Concluimos que la fuerza de rozamiento sobre el bloque tiene un módulo de $24\\text{ N}$."
+      }
+    ],
+    "errorLine": 3,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 3.",
+    "successBody": "Como la fuerza aplicada ($20\\text{ N}$) es menor que el rozamiento estático máximo ($24\\text{ N}$), el bloque permanece en reposo. En equilibrio estático, la fuerza de rozamiento se ajusta exactamente a la fuerza aplicada: $f_s = 20\\text{ N}$ (si fuera $24\\text{ N}$, el bloque aceleraría hacia atrás).",
+    "hintBody": "Si el bloque no se mueve, la suma de fuerzas horizontales debe ser cero. Compara la fuerza aplicada con el límite estático."
+  },
+  {
+    "id": "ERR08",
+    "tag": "PROBLEMA • TRIGONOMETRÍA / ECUACIONES",
+    "statement": "Halle el número de soluciones de la ecuación $\\sin(2x) = \\sin x$ en el intervalo $[0; \\pi]$.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Desarrollamos el seno del ángulo doble en el primer miembro: $$2\\sin x \\cos x = \\sin x$$"
+      },
+      {
+        "num": 2,
+        "text": "Cancelamos $\\sin x$ en ambos lados de la igualdad: $$2\\cos x = 1 \\implies \\cos x = \\frac{1}{2}$$"
+      },
+      {
+        "num": 3,
+        "text": "En el intervalo $[0; \\pi]$, $\\cos x = \\frac{1}{2}$ tiene una única solución ($x = \\frac{\\pi}{3}$), por lo que hay $1$ solución."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "Al dividir ambos miembros entre $\\sin x$, se pierden las soluciones donde $\\sin x = 0$. En $[0; \\pi]$, $\\sin x = 0$ aporta dos soluciones adicionales ($x = 0$ y $x = \\pi$), dando un total de $3$ soluciones.",
+    "hintBody": "Nunca canceles una función trigonométrica que contiene la incógnita sin igualarla primero a cero para rescatar sus raíces."
+  },
+  {
+    "id": "ERR09",
+    "tag": "PROBLEMA • ÁLGEBRA / NÚMEROS COMPLEJOS",
+    "statement": "Simplifique y calcule el valor de la siguiente expresión en el campo de los complejos: $$K = \\sqrt{-4} \\cdot \\sqrt{-9} + i^{2026}$$",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Aplicamos la propiedad del producto de radicales $\\sqrt{a}\\cdot\\sqrt{b} = \\sqrt{a\\cdot b}$ al primer término: $$\\sqrt{-4} \\cdot \\sqrt{-9} = \\sqrt{(-4)(-9)} = \\sqrt{36} = 6$$"
+      },
+      {
+        "num": 2,
+        "text": "Reducimos la potencia de la unidad imaginaria dividiendo el exponente entre $4$: $$i^{2026} = i^{4(506) + 2} = i^2 = -1$$"
+      },
+      {
+        "num": 3,
+        "text": "Sumamos ambos resultados parciales y obtenemos: $$K = 6 + (-1) = 5$$"
+      }
+    ],
+    "errorLine": 1,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 1.",
+    "successBody": "La propiedad $\\sqrt{a}\\cdot\\sqrt{b} = \\sqrt{ab}$ solo es válida cuando al menos uno de los radicandos es no negativo ($a \\ge 0$ o $b \\ge 0$). En los complejos: $\\sqrt{-4}\\cdot\\sqrt{-9} = (2i)(3i) = 6i^2 = -6$. Así, $K = -6 - 1 = -7$.",
+    "hintBody": "Revisa si la propiedad distributiva del radical respecto al producto se cumple cuando ambos radicandos son negativos."
+  },
+  {
+    "id": "ERR10",
+    "tag": "PROBLEMA • ARITMÉTICA / PORCENTAJES",
+    "statement": "El precio de un artículo aumentó en un $25\\%$ en enero y luego disminuyó en un $20\\%$ en febrero. Determine la variación porcentual neta respecto al precio inicial.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Denotamos el precio inicial del artículo como $P_0 = 100\\%$."
+      },
+      {
+        "num": 2,
+        "text": "Calculamos la variación neta sumando algebraicamente los porcentajes: $$+25\\% - 20\\% = +5\\%$$"
+      },
+      {
+        "num": 3,
+        "text": "Concluimos que el precio final experimentó un aumento neto del $5\\%$ respecto al inicial."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "Las variaciones porcentuales sucesivas no se suman directamente porque se aplican sobre bases distintas. Tras subir $25\\%$, el precio es $125\\%$; al bajar $20\\%$ de ese nuevo valor queda $125\\% \\times 0.80 = 100\\%$. La variación neta es $0\\%$.",
+    "hintBody": "¿El descuento del $20\\%$ en febrero se aplica sobre el precio original o sobre el precio ya incrementado en enero?"
+  },
+  {
+    "id": "ERR11",
+    "tag": "PROBLEMA • GEOMETRÍA / ÁREAS Y SEMEJANZA",
+    "statement": "Dos triángulos equiláteros $T_1$ y $T_2$ tienen lados de longitud $L_1 = 2\\text{ cm}$ y $L_2 = 6\\text{ cm}$, respectivamente. Calcule la razón entre sus áreas $\\frac{A_2}{A_1}$.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Observamos que todos los triángulos equiláteros son semejantes entre sí, con razón de semejanza: $$k = \\frac{L_2}{L_1} = \\frac{6}{2} = 3$$"
+      },
+      {
+        "num": 2,
+        "text": "Por proporcionalidad geométrica, la razón de sus áreas es igual a la razón de sus lados: $$\\frac{A_2}{A_1} = k = 3$$"
+      },
+      {
+        "num": 3,
+        "text": "Por lo tanto, el área del triángulo $T_2$ es el triple del área del triángulo $T_1$."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "En figuras semejantes, la razón de sus áreas es igual al CUADRADO de la razón de semejanza, no a la razón lineal: $\\frac{A_2}{A_1} = k^2 = 3^2 = 9$.",
+    "hintBody": "El área es una magnitud bidimensional; recuerda cómo escala el área cuando las dimensiones lineales se multiplican por un factor $k$."
+  },
+  {
+    "id": "ERR12",
+    "tag": "PROBLEMA • FÍSICA / TRABAJO Y ENERGÍA",
+    "statement": "Un bloque de $2\\text{ kg}$ se desliza $5\\text{ m}$ sobre una superficie horizontal rugosa bajo la acción de una fuerza horizontal constante $F = 30\\text{ N}$ y una fuerza de rozamiento cinético $f_k = 10\\text{ N}$. Calcule el trabajo realizado por la fuerza de rozamiento.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Identificamos que la fuerza de rozamiento cinético tiene módulo $f_k = 10\\text{ N}$ y el desplazamiento es $d = 5\\text{ m}$."
+      },
+      {
+        "num": 2,
+        "text": "Aplicamos la fórmula del trabajo mecánico constante: $$W_{f_k} = f_k \\cdot d = 10 \\cdot 5 = +50\\text{ J}$$"
+      },
+      {
+        "num": 3,
+        "text": "Concluimos que la fuerza de rozamiento realiza un trabajo de $+50\\text{ J}$ sobre el bloque."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "La definición general de trabajo es $W = F \\cdot d \\cdot \\cos\\theta$. Como el rozamiento cinético se opone al desplazamiento ($\\theta = 180^\\circ$ y $\\cos 180^\\circ = -1$), su trabajo es negativo: $W_{f_k} = -50\\text{ J}$.",
+    "hintBody": "Fíjate en el ángulo que forman el vector fuerza de rozamiento cinético y el vector desplazamiento."
+  },
+  {
+    "id": "ERR13",
+    "tag": "PROBLEMA • ÁLGEBRA / INECUACIONES CON RADICALES",
+    "statement": "Determine el conjunto solución en $\\mathbb{R}$ de la inecuación irracional: $$\\sqrt{x - 1} > -3$$",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Hallamos el Universo o Conjunto de Valores Admisibles (CVA) exigiendo que el radicando sea no negativo: $$x - 1 \\ge 0 \\implies x \\ge 1$$"
+      },
+      {
+        "num": 2,
+        "text": "Elevamos ambos miembros al cuadrado para eliminar el radical: $$(\\sqrt{x - 1})^2 > (-3)^2 \\implies x - 1 > 9 \\implies x > 10$$"
+      },
+      {
+        "num": 3,
+        "text": "Intersectamos $x \\ge 1$ con $x > 10$ y concluimos que $CS = \\langle 10; +\\infty \\rangle$."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "No se puede elevar al cuadrado una desigualdad cuando un miembro es positivo y el otro negativo sin alterar el sentido o la equivalencia. Como $\\sqrt{x - 1} \\ge 0$ siempre que exista, automáticamente es mayor que $-3$ para todo $x$ en su CVA: $CS = [1; +\\infty \\rangle$.",
+    "hintBody": "Evalúa el signo del primer miembro en todo su dominio: ¿puede una raíz cuadrada real ser menor o igual que $-3$?"
+  },
+  {
+    "id": "ERR14",
+    "tag": "PROBLEMA • TRIGONOMETRÍA / FUNCIONES INVERSAS",
+    "statement": "Calcule el valor exacto de la expresión: $$M = \\arcsin\\left(\\sin\\frac{5\\pi}{6}\\right)$$",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Recordamos la propiedad inversa $\\arcsin(\\sin\\theta) = \\theta$."
+      },
+      {
+        "num": 2,
+        "text": "Aplicamos directamente dicha propiedad al argumento dado: $$M = \\frac{5\\pi}{6}$$"
+      },
+      {
+        "num": 3,
+        "text": "Concluimos que el valor exacto de $M$ es $\\frac{5\\pi}{6}\\text{ rad}$."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "La identidad $\\arcsin(\\sin\\theta) = \\theta$ solo se cumple si $\\theta \\in \\left[-\\frac{\\pi}{2}; \\frac{\\pi}{2}\\right]$ (rango principal del arcoseno). Como $\\sin\\frac{5\\pi}{6} = \\sin\\frac{\\pi}{6} = \\frac{1}{2}$, el valor correcto es $M = \\frac{\\pi}{6}$.",
+    "hintBody": "Verifica si $\\frac{5\\pi}{6}$ pertenece al rango principal de la función $\\arcsin(x)$."
+  },
+  {
+    "id": "ERR15",
+    "tag": "PROBLEMA • ARITMÉTICA / DIVISIBILIDAD",
+    "statement": "Si se cumple que $6N = \\overset{\\circ}{15}$ (es decir, $6N$ es múltiplo de $15$), donde $N \\in \\mathbb{Z}^+$, determine la forma general de $N$.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Planteamos la ecuación de divisibilidad dada en el enunciado: $$6N = \\overset{\\circ}{15}$$"
+      },
+      {
+        "num": 2,
+        "text": "Dividimos el coeficiente $6$ entre $3$ para aplicar el principio de Arquímedes sin alterar el módulo: $$2N = \\overset{\\circ}{15}$$"
+      },
+      {
+        "num": 3,
+        "text": "Como $2$ y $15$ son PESI, concluimos que $N = \\overset{\\circ}{15}$."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "Al dividir el primer miembro entre $3$, también debe dividirse el módulo $15$ entre $\\text{MCD}(3, 15) = 3$. Lo correcto es $2N = \\overset{\\circ}{5} \\implies N = \\overset{\\circ}{5}$. Por ejemplo, $N = 5$ cumple $6(5) = 30 = \\overset{\\circ}{15}$, aunque $5$ no es múltiplo de $15$.",
+    "hintBody": "Cuando simplificas un factor común en una ecuación de divisibilidad, ¿qué debe ocurrir también con el módulo?"
+  },
+  {
+    "id": "ERR16",
+    "tag": "PROBLEMA • FÍSICA / ELECTROSTÁTICA",
+    "statement": "Dos cargas puntuales $q_1 = +4\\text{ }\\mu\\text{C}$ y $q_2 = -9\\text{ }\\mu\\text{C}$ están separadas una distancia $d$ en el vacío. Halle el punto sobre la recta que las une donde el potencial eléctrico total es nulo ($V_{\\text{total}} = 0$).",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Ubicamos un punto $P$ entre ambas cargas, a una distancia $x$ de $q_1$ y $(d - x)$ de $q_2$."
+      },
+      {
+        "num": 2,
+        "text": "Planteamos la suma de potenciales eléctricos tomando magnitudes positivas: $$\\frac{k |q_1|}{x} + \\frac{k |q_2|}{d - x} = 0 \\implies \\frac{4}{x} + \\frac{9}{d - x} = 0$$"
+      },
+      {
+        "num": 3,
+        "text": "Al ver que la suma de dos términos positivos no puede ser cero, concluimos que no existe ningún punto donde $V_{\\text{total}} = 0$."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "El potencial eléctrico es una magnitud ESCALAR que conserva el signo algebraico de cada carga (no se toma valor absoluto). La ecuación correcta es $\\frac{4}{x} - \\frac{9}{d - x} = 0 \\implies x = \\frac{4}{13}d$.",
+    "hintBody": "A diferencia del campo eléctrico (vector), el potencial eléctrico se suma algebraicamente respetando el signo de cada carga."
+  },
+  {
+    "id": "ERR17",
+    "tag": "PROBLEMA • GEOMETRÍA / CIRCUNFERENCIA",
+    "statement": "En una circunferencia de centro $O$, desde un punto exterior $P$ se trazan una recta tangente $PT$ ($T$ punto de tangencia) y una recta secante que corta a la circunferencia en $A$ y $B$ ($PA < PB$). Si $PA = 4\\text{ cm}$ y $AB = 5\\text{ cm}$, calcule $PT$.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Identificamos los segmentos determinados por la secante: $PA = 4\\text{ cm}$ y $AB = 5\\text{ cm}$."
+      },
+      {
+        "num": 2,
+        "text": "Aplicamos el teorema de la tangente y la secante: $$PT^2 = PA \\cdot AB \\implies PT^2 = 4 \\cdot 5 = 20$$"
+      },
+      {
+        "num": 3,
+        "text": "Extraemos la raíz cuadrada y obtenemos $PT = 2\\sqrt{5}\\text{ cm}$."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "El teorema de la tangente establece que $PT^2 = PB \\cdot PA$ (secante completa por su parte externa), no $PA \\cdot AB$. Como $PB = PA + AB = 4 + 5 = 9\\text{ cm}$, se tiene $PT^2 = 9 \\cdot 4 = 36 \\implies PT = 6\\text{ cm}$.",
+    "hintBody": "Revisa exactamente cuáles son los dos segmentos que se multiplican en el teorema de la tangente y la secante."
+  },
+  {
+    "id": "ERR18",
+    "tag": "PROBLEMA • ÁLGEBRA / FUNCIONES",
+    "statement": "Determine el dominio maximal en $\\mathbb{R}$ de la función real definida por: $$f(x) = \\frac{\\sqrt{x + 3}}{x^2 - 9}$$",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Exigimos que el radicando del numerador sea no negativo: $$x + 3 \\ge 0 \\implies x \\ge -3$$"
+      },
+      {
+        "num": 2,
+        "text": "Exigimos que el denominador sea distinto de cero: $$x^2 - 9 \\neq 0 \\implies x \\neq 3$$"
+      },
+      {
+        "num": 3,
+        "text": "Intersectamos ambas condiciones y obtenemos $\\text{Dom}(f) = [-3; +\\infty \\rangle - \\{3\\}$."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "La ecuación $x^2 - 9 = 0$ tiene DOS raíces reales: $x = 3$ y $x = -3$. Por lo tanto, el denominador exige $x \\neq 3$ y también $x \\neq -3$, convirtiendo el intervalo cerrado en abierto en $-3$: $\\text{Dom}(f) = \\langle -3; +\\infty \\rangle - \\{3\\}$.",
+    "hintBody": "¿Cuántas soluciones reales tiene $x^2 = 9$? Asegúrate de excluir todas las raíces del denominador."
+  },
+  {
+    "id": "ERR19",
+    "tag": "PROBLEMA • TRIGONOMETRÍA / REDUCCIÓN AL PRIMER CUADRANTE",
+    "statement": "Reduzca al primer cuadrante la expresión trigonométrica $\\tan(270^\\circ + \\alpha)$, donde $\\alpha$ es un ángulo agudo.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Ubicamos el ángulo $(270^\\circ + \\alpha)$ en el cuarto cuadrante ($\\text{IV C}$), donde la tangente es negativa."
+      },
+      {
+        "num": 2,
+        "text": "Como se usa el ángulo cuadrantal $270^\\circ$, mantenemos la misma razón trigonométrica y colocamos el signo negativo: $$\\tan(270^\\circ + \\alpha) = -\\tan\\alpha$$"
+      },
+      {
+        "num": 3,
+        "text": "Concluimos que la expresión reducida es $-\\tan\\alpha$."
+      }
+    ],
+    "errorLine": 2,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 2.",
+    "successBody": "Cuando se reduce usando ángulos cuadrantales del eje vertical ($90^\\circ$ o $270^\\circ$), la razón trigonométrica cambia a su CO-RAZÓN. La co-razón de la tangente es la cotangente, por lo que $\\tan(270^\\circ + \\alpha) = -\\cot\\alpha$.",
+    "hintBody": "Recuerda la regla de reducción al primer cuadrante cuando el ángulo de referencia es $90^\\circ$ o $270^\\circ$ (eje Y)."
+  },
+  {
+    "id": "ERR20",
+    "tag": "PROBLEMA • FÍSICA / MOVIMIENTO CIRCULAR",
+    "statement": "Una partícula describe un Movimiento Circular Uniforme (MCU) con rapidez tangencial constante $v = 10\\text{ m/s}$ en una trayectoria de radio $R = 5\\text{ m}$. Calcule el módulo de su aceleración.",
+    "lines": [
+      {
+        "num": 1,
+        "text": "Identificamos que en un Movimiento Circular Uniforme (MCU) la rapidez tangencial es constante: $v = 10\\text{ m/s}$."
+      },
+      {
+        "num": 2,
+        "text": "Calculamos la aceleración tangencial derivando la rapidez respecto al tiempo: $$a_t = \\frac{dv}{dt} = 0$$"
+      },
+      {
+        "num": 3,
+        "text": "Concluimos que, al ser $a_t = 0$, la aceleración total de la partícula es $a = 0\\text{ m/s}^2$."
+      }
+    ],
+    "errorLine": 3,
+    "successTitle": "✓ ¡Buen ojo! El error está en la Línea 3.",
+    "successBody": "En el MCU la rapidez (módulo de la velocidad) es constante, pero la DIRECCIÓN del vector velocidad cambia continuamente. Por ello existe aceleración centrípeta: $a_c = \\frac{v^2}{R} = \\frac{10^2}{5} = 20\\text{ m/s}^2$.",
+    "hintBody": "La velocidad es un vector: aunque su módulo no cambie, ¿qué ocurre con su dirección en una trayectoria circular?"
+  }
+]

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TioProject | Project Physics Pre — Ciencias y Matemáticas</title>
+  <meta name="description" content="Plataforma preuniversitaria de Ciencias y Matemáticas (UNI, UNMSM, UNFV, UNAC). Temario independiente por cursos, solucionarios CEPREUNI y PRE San Marcos, Los Escritos de Project y clases particulares o grupales." />
+  <link rel="icon" type="image/jpeg" href="assets/logotioproject.jpg" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            obsidian: {
+              950: '#0E1218',
+              900: '#171C24',
+              850: '#1F2631',
+              800: '#28313F',
+              700: '#3D4859',
+            },
+            silver: {
+              100: '#F2F6FA',
+              200: '#D9E2EC',
+              300: '#B5C2D1',
+              400: '#8C9BA9',
+              500: '#657382',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- KaTeX for Mathematical Equations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Mermaid.js for Interactive Skill Trees -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-obsidian-950 text-silver-100 font-sans antialiased selection:bg-white selection:text-obsidian-950">
+
+  <!-- Subtle Physics Grid Background -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0"></div>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 border-b border-obsidian-700/80 bg-obsidian-950/85 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center gap-3 group">
+        <img src="assets/logotioproject.jpg" alt="Logo Project Physics Pre" class="w-10 h-10 rounded-lg object-cover border border-obsidian-700 group-hover:border-silver-300 transition" />
+        <div>
+          <span class="font-extrabold tracking-tight text-white text-base sm:text-lg block leading-none">TioProject</span>
+          <span class="font-mono text-[10px] uppercase tracking-widest text-silver-400">Project Physics Pre</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Navegación principal" class="hidden lg:flex items-center gap-6 text-sm font-medium text-silver-400">
+        <a href="#inicio" data-tab-link="inicio" class="nav-tab-link text-white font-semibold transition">Inicio</a>
+        <a href="#micro-reto" data-tab-link="micro-reto" class="nav-tab-link hover:text-white transition">Micro-Reto</a>
+        <a href="#ruta-estudio" data-tab-link="ruta-estudio" class="nav-tab-link hover:text-white transition">Árbol de Cursos</a>
+        <a href="#solucionarios" data-tab-link="solucionarios" class="nav-tab-link hover:text-white transition">Solucionarios</a>
+        <a href="#boveda" data-tab-link="boveda" class="nav-tab-link hover:text-white transition">Escritos y PDF</a>
+        <a href="#caza-errores" data-tab-link="caza-errores" class="nav-tab-link hover:text-white transition">Caza-Errores</a>
+        <a href="#clases" data-tab-link="clases" class="nav-tab-link hover:text-white transition">Clases</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-2">
+        <a href="https://www.youtube.com/@johanprojectpre" data-youtube-link target="_blank" rel="noopener noreferrer" aria-label="YouTube TioProject" title="YouTube @johanprojectpre" class="p-2 rounded-lg border border-rose-500/30 bg-obsidian-900 hover:bg-rose-500/15 hover:border-rose-400 text-rose-400 hover:text-rose-300 transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/projectphysicspre/?locale=es_LA" data-facebook-link target="_blank" rel="noopener noreferrer" aria-label="Facebook TioProject" title="Facebook Oficial" class="p-2 rounded-lg border border-blue-500/30 bg-obsidian-900 hover:bg-blue-500/15 hover:border-blue-400 text-blue-400 hover:text-blue-300 transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@comunidad_naosu?_r=1&_t=ZS-9BglBUeu6NN" data-tiktok-link target="_blank" rel="noopener noreferrer" aria-label="TikTok TioProject" title="TikTok Oficial" class="p-2 rounded-lg border border-cyan-500/30 bg-obsidian-900 hover:bg-cyan-500/15 hover:border-cyan-400 text-cyan-300 hover:text-cyan-200 transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+        </a>
+        <a href="https://whatsapp.com/channel/0029VanLdd40gcfF2N7gEh1T" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white text-obsidian-950 font-semibold text-xs sm:text-sm hover:bg-silver-200 transition shadow-sm">
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.46 0 .08 5.38.08 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62A11.94 11.94 0 0 0 12.07 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.21-3.54-8.52zm-8.45 18.48a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.67.96.98-3.58-.24-.37A9.92 9.92 0 0 1 2.12 12c0-5.49 4.46-9.95 9.95-9.95 2.66 0 5.16 1.04 7.04 2.92a9.89 9.89 0 0 1 2.91 7.03c0 5.49-4.46 9.96-9.95 9.96zm5.46-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+          <span class="hidden sm:inline">Unirme al canal</span>
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg border border-obsidian-700 text-silver-300 hover:text-white" aria-label="Abrir menú">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Quick Strip -->
+    <div class="lg:hidden border-t border-obsidian-800/80 bg-obsidian-950/95 px-4 py-2 overflow-x-auto no-scrollbar">
+      <div class="flex items-center gap-4 text-xs font-medium text-silver-400 whitespace-nowrap">
+        <a href="#inicio" data-tab-link="inicio" class="nav-tab-link text-white font-semibold py-1 transition">Inicio</a>
+        <a href="#micro-reto" data-tab-link="micro-reto" class="nav-tab-link hover:text-white py-1 transition">Micro-Reto</a>
+        <a href="#ruta-estudio" data-tab-link="ruta-estudio" class="nav-tab-link hover:text-white py-1 transition">Árbol de Cursos</a>
+        <a href="#solucionarios" data-tab-link="solucionarios" class="nav-tab-link hover:text-white py-1 transition">Solucionarios</a>
+        <a href="#boveda" data-tab-link="boveda" class="nav-tab-link hover:text-white py-1 transition">Escritos y PDF</a>
+        <a href="#caza-errores" data-tab-link="caza-errores" class="nav-tab-link hover:text-white py-1 transition">Caza-Errores</a>
+        <a href="#clases" data-tab-link="clases" class="nav-tab-link hover:text-white py-1 transition">Clases</a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-obsidian-700 bg-obsidian-900 px-4 py-4 space-y-3 text-sm">
+      <a href="#inicio" data-tab-link="inicio" class="nav-tab-link block py-1.5 text-white font-semibold">Inicio (Presentación)</a>
+      <a href="#micro-reto" data-tab-link="micro-reto" class="nav-tab-link block py-1.5 text-silver-300 hover:text-white">Micro-Reto de Portada</a>
+      <a href="#ruta-estudio" data-tab-link="ruta-estudio" class="nav-tab-link block py-1.5 text-silver-300 hover:text-white">Árbol por Cursos Independientes</a>
+      <a href="#solucionarios" data-tab-link="solucionarios" class="nav-tab-link block py-1.5 text-silver-300 hover:text-white">Solucionarios UNI / San Marcos</a>
+      <a href="#boveda" data-tab-link="boveda" class="nav-tab-link block py-1.5 text-silver-300 hover:text-white">Los Escritos de Project y PDFs</a>
+      <a href="#caza-errores" data-tab-link="caza-errores" class="nav-tab-link block py-1.5 text-silver-300 hover:text-white">Club Caza-Errores</a>
+      <a href="#clases" data-tab-link="clases" class="nav-tab-link block py-1.5 text-silver-300 hover:text-white">Clases Particulares y Grupales</a>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+
+    <!-- 1. HERO SECTION -->
+    <section id="inicio" class="pt-10 pb-14 sm:pt-16 sm:pb-20 border-b border-obsidian-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+          <!-- Left Column -->
+          <div class="lg:col-span-7 space-y-6">
+            <h1 class="text-3xl sm:text-5xl lg:text-[3.35rem] font-extrabold tracking-tight text-white leading-[1.12]">
+              Deja de memorizar fórmulas que olvidas en el examen. <span class="text-silver-400">Aprende a razonar ciencias.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-silver-400 max-w-2xl leading-relaxed">
+              Grupo de ayuda preuniversitario con <span class="text-silver-200 font-medium">solucionarios, resúmenes y material de apoyo</span> gratuitos, además de clases guiadas en matemáticas y ciencias.
+            </p>
+
+            <!-- University Badges (Direct Shortcuts to Solucionarios) -->
+            <div class="pt-1">
+              <p class="text-xs font-mono uppercase tracking-wider text-silver-500 mb-2.5">Acceso rápido por admisión:</p>
+              <div class="flex flex-wrap gap-2">
+                <a href="#solucionarios" class="px-3 py-1 rounded-md bg-obsidian-900 border border-obsidian-700 hover:border-silver-400 hover:text-white font-mono text-xs font-semibold text-silver-200 transition">UNI</a>
+                <a href="#solucionarios" class="px-3 py-1 rounded-md bg-obsidian-900 border border-obsidian-700 hover:border-silver-400 hover:text-white font-mono text-xs font-semibold text-silver-200 transition">UNMSM (DECO)</a>
+                <a href="#solucionarios" class="px-3 py-1 rounded-md bg-obsidian-900 border border-obsidian-700 hover:border-silver-400 hover:text-white font-mono text-xs font-semibold text-silver-200 transition">UNFV</a>
+                <a href="#solucionarios" class="px-3 py-1 rounded-md bg-obsidian-900 border border-obsidian-700 hover:border-silver-400 hover:text-white font-mono text-xs font-semibold text-silver-200 transition">UNAC</a>
+              </div>
+            </div>
+
+            <!-- Primary & Secondary CTAs (Materials First) -->
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3.5 pt-2">
+              <a href="#solucionarios" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-obsidian-950 font-bold text-sm hover:bg-silver-200 transition shadow-lg shadow-white/5">
+                <i data-lucide="folder-open" class="w-4 h-4"></i>
+                Materiales y Solucionarios
+              </a>
+              <a href="#boveda" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-obsidian-900 border border-obsidian-700 text-white font-semibold text-sm hover:bg-obsidian-800 hover:border-silver-500 transition">
+                <i data-lucide="book-marked" class="w-4 h-4"></i>
+                Escritos y Resúmenes
+              </a>
+              <a href="#ruta-estudio" class="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-silver-300 hover:text-white font-semibold text-sm transition">
+                <i data-lucide="git-fork" class="w-4 h-4"></i>
+                <span>Ver Cursos</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Official Emblem Card -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl border border-obsidian-700 bg-obsidian-900 p-4 sm:p-5 shadow-2xl">
+              <div class="overflow-hidden rounded-xl border border-obsidian-800 bg-black">
+                <img src="assets/logotioproject.jpg" alt="Project Physics Pre - El esfuerzo constante puede vencer al talento natural" class="w-full h-auto object-cover" />
+              </div>
+              <div class="mt-4 flex items-center justify-between gap-3 px-1">
+                <div>
+                  <p class="text-xs font-mono text-silver-400">LEMA OFICIAL</p>
+                  <p class="text-xs sm:text-sm italic text-silver-200">"El esfuerzo constante puede vencer al talento natural"</p>
+                </div>
+                <a href="#micro-reto" class="shrink-0 inline-flex items-center gap-1 text-xs font-mono font-semibold text-white bg-obsidian-800 hover:bg-obsidian-700 border border-obsidian-700 px-3 py-2 rounded-lg transition">
+                  <span>Probar Reto</span>
+                  <i data-lucide="arrow-down-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Subtle Strip for Classes Promotion (Non-intrusive) -->
+        <div class="rounded-xl border border-obsidian-800 bg-obsidian-900/75 px-4 py-3.5 sm:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-obsidian-800 border border-obsidian-700 text-white shrink-0">
+              <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            </span>
+            <p class="text-xs sm:text-sm text-silver-300">
+              <span class="font-semibold text-white">Clases y Asesorías Preuniversitarias:</span> preparación guiada desde cero y repaso intensivo por curso.
+            </p>
+          </div>
+          <a href="#clases" class="shrink-0 inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-lg bg-obsidian-800 hover:bg-obsidian-700 border border-obsidian-700 text-xs font-mono font-semibold text-white transition">
+            <span>Ver Clases</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. MICRO-RETO INTERACTIVO (Estilo Brilliant.org) -->
+    <section id="micro-reto" class="py-16 border-b border-obsidian-800 bg-obsidian-900/40">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-silver-400">Filtro Conceptual • 30 Segundos</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">¿Caerías en esta trampa de admisión?</h2>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span id="challenge-daily-badge" class="px-3 py-1.5 rounded-lg border border-obsidian-700 bg-obsidian-900 text-xs font-mono text-silver-300">
+              Reto del Día
+            </span>
+          </div>
+        </div>
+
+        <div id="challenge-container" class="rounded-2xl border border-obsidian-700 bg-obsidian-900 p-6 sm:p-8 shadow-xl"></div>
+      </div>
+    </section>
+
+    <!-- 3. ÁRBOL DE HABILIDADES POR CURSOS INDEPENDIENTES (Basado en Temario Ordenado.pdf) -->
+    <section id="ruta-estudio" class="py-16 sm:py-20 border-b border-obsidian-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-silver-400">Cursos Independientes • Temario Ordenado</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Ruta de Temas por Curso</h2>
+            <p class="text-sm text-silver-400 mt-2 max-w-2xl">
+              Cada curso tiene su propia ruta independiente con sus temas oficiales del temario. Selecciona un curso, explora su secuencia o toca cualquier tema de la lista/diagrama.
+            </p>
+          </div>
+
+          <!-- Progress Counter -->
+          <div class="bg-obsidian-900 border border-obsidian-700 rounded-xl px-4 py-3 flex items-center gap-4">
+            <div>
+              <p class="text-[11px] font-mono uppercase text-silver-400">Tu avance guardado</p>
+              <p id="roadmap-progress-text" class="text-sm font-bold text-white">0 de 0 temas dominados</p>
+            </div>
+            <div class="w-24 h-2 bg-obsidian-800 rounded-full overflow-hidden">
+              <div id="roadmap-progress-bar" class="h-full bg-gradient-to-r from-slate-300 via-sky-300 to-slate-200 transition-all duration-300" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Independent Course Selector Tabs (7 cursos independientes) -->
+        <div class="mb-6 space-y-3">
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-silver-500 block mb-2">Matemáticas (Cursos Independientes)</span>
+            <div class="flex flex-wrap gap-2" id="roadmap-tabs-math">
+              <button data-course="algebra" class="roadmap-tab active px-3.5 py-2 rounded-lg font-mono text-xs font-semibold border transition">
+                Álgebra (19)
+              </button>
+              <button data-course="aritmetica" class="roadmap-tab px-3.5 py-2 rounded-lg font-mono text-xs font-semibold border transition">
+                Aritmética (19)
+              </button>
+              <button data-course="trigonometria" class="roadmap-tab px-3.5 py-2 rounded-lg font-mono text-xs font-semibold border transition">
+                Trigonometría (18)
+              </button>
+              <button data-course="geometria_plana" class="roadmap-tab px-3.5 py-2 rounded-lg font-mono text-xs font-semibold border transition">
+                Geometría Plana (20)
+              </button>
+              <button data-course="geometria_espacio" class="roadmap-tab px-3.5 py-2 rounded-lg font-mono text-xs font-semibold border transition">
+                Geometría del Espacio (10)
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-silver-500 block mb-2">Ciencias (Cursos Independientes)</span>
+            <div class="flex flex-wrap gap-2" id="roadmap-tabs-sci">
+              <button data-course="fisica" class="roadmap-tab px-3.5 py-2 rounded-lg font-mono text-xs font-semibold border transition">
+                Física (19)
+              </button>
+              <button data-course="quimica" class="roadmap-tab px-3.5 py-2 rounded-lg font-mono text-xs font-semibold border transition">
+                Química (24)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diagram + Complete Topic Index + Node Inspector Grid -->
+        <div class="grid lg:grid-cols-12 gap-6 items-start">
+          <!-- Left 7 Cols: Mermaid Flowchart + Full Temario List -->
+          <div class="lg:col-span-7 space-y-6">
+            <!-- Temario Completo del Curso Seleccionado -->
+            <div class="rounded-2xl border border-obsidian-700 bg-obsidian-900 p-4 sm:p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-mono text-xs uppercase tracking-wider text-silver-300">Temario Oficial Completo del Curso</h3>
+                <span id="course-topic-count" class="font-mono text-xs text-silver-500"></span>
+              </div>
+              <div id="course-topic-list" class="grid sm:grid-cols-2 gap-2 max-h-[340px] overflow-y-auto pr-1"></div>
+            </div>
+          </div>
+
+          <!-- Right 5 Cols: Node Details Inspector -->
+          <div class="lg:col-span-5 rounded-2xl border border-obsidian-700 bg-obsidian-900 p-6 lg:sticky lg:top-24">
+            <div id="node-inspector"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SOLUCIONARIOS UNI / SAN MARCOS (Actualización Constante vía Drive / Apps Script) -->
+    <section id="solucionarios" class="py-16 sm:py-20 border-b border-obsidian-800 bg-obsidian-900/35">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-silver-400">Actualización Constante • Google Drive</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-1">Solucionarios</h2>
+            <p class="text-sm text-silver-400 mt-2 max-w-2xl">
+              Carpetas activas donde publico continuamente solucionarios detallados y organizados por ciclo y curso.
+            </p>
+          </div>
+          <div id="solucionarios-sync-badge" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-obsidian-700 bg-obsidian-900 text-xs font-mono text-silver-300">
+            <span class="w-2 h-2 rounded-full bg-white"></span>
+            <span>Sincronización Drive Lista</span>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- CEPREUNI 2027-I -->
+          <div class="rounded-2xl border border-obsidian-700 bg-obsidian-900 p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full bg-white text-obsidian-950 font-mono text-xs font-bold">UNI • CEPREUNI 2027-I</span>
+                <span class="font-mono text-[11px] text-silver-400">Activo</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Solucionarios CEPREUNI 2027-I</h3>
+              <p class="text-xs sm:text-sm text-silver-400 mt-2">
+                Resoluciones paso a paso de seminarios, prácticas calificadas y exámenes de CEPREUNI con rigor técnico.
+              </p>
+
+              <div id="cepreuni-feed" class="mt-4 space-y-2 text-xs font-mono text-silver-300">
+                <div class="p-3 rounded-xl bg-obsidian-950 border border-obsidian-800 flex items-center justify-between">
+                  <span>Carpeta CEPREUNI 2027-I</span>
+                  <span class="text-silver-400">Drive</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-obsidian-800 flex flex-col gap-2.5">
+              <a href="https://drive.google.com/drive/u/0/folders/1RKJBuVx7MuGxI5gec14qZ5EKNclPPibm" data-cepreuni-link target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white text-obsidian-950 font-bold text-xs hover:bg-silver-200 transition">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                Abrir CEPREUNI 2027-I
+              </a>
+              <a href="https://wa.me/51912138703?text=Hola%20TioProject,%20busco%20un%20solucionario%20de%20CEPREUNI%202027-I." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-obsidian-850 border border-obsidian-700 text-silver-200 font-semibold text-xs hover:bg-obsidian-800 hover:text-white transition">
+                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.46 0 .08 5.38.08 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62A11.94 11.94 0 0 0 12.07 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.21-3.54-8.52zm-8.45 18.48a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.67.96.98-3.58-.24-.37A9.92 9.92 0 0 1 2.12 12c0-5.49 4.46-9.95 9.95-9.95 2.66 0 5.16 1.04 7.04 2.92a9.89 9.89 0 0 1 2.91 7.03c0 5.49-4.46 9.96-9.95 9.96zm5.46-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+                Pedir Tema
+              </a>
+            </div>
+          </div>
+
+          <!-- PRE SAN MARCOS 2026-II -->
+          <div class="rounded-2xl border border-obsidian-700 bg-obsidian-900 p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full border border-silver-400 text-white font-mono text-xs font-bold">UNMSM • PRESM 2026-II</span>
+                <span class="font-mono text-[11px] text-silver-400">Activo</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Solucionarios PRE SAN MARCOS</h3>
+              <p class="text-xs sm:text-sm text-silver-400 mt-2">
+                Solucionarios semanales y simulacros con análisis conceptual y claves argumentadas para admisión UNMSM.
+              </p>
+
+              <div id="presm-feed" class="mt-4 space-y-2 text-xs font-mono text-silver-300">
+                <div class="p-3 rounded-xl bg-obsidian-950 border border-obsidian-800 flex items-center justify-between">
+                  <span>Carpeta PRESM 2026-II</span>
+                  <span class="text-silver-400">Drive</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-obsidian-800 flex flex-col gap-2.5">
+              <a href="https://drive.google.com/drive/u/0/folders/1RQvCYoIfRmMTdJCiHnFtxDP8oRVAhM3l" data-presm-link target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white text-obsidian-950 font-bold text-xs hover:bg-silver-200 transition">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                Abrir PRE SAN MARCOS
+              </a>
+              <a href="https://wa.me/51912138703?text=Hola%20TioProject,%20busco%20un%20solucionario%20de%20PRE%20SAN%20MARCOS%202026-II." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-obsidian-850 border border-obsidian-700 text-silver-200 font-semibold text-xs hover:bg-obsidian-800 hover:text-white transition">
+                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.46 0 .08 5.38.08 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62A11.94 11.94 0 0 0 12.07 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.21-3.54-8.52zm-8.45 18.48a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.67.96.98-3.58-.24-.37A9.92 9.92 0 0 1 2.12 12c0-5.49 4.46-9.95 9.95-9.95 2.66 0 5.16 1.04 7.04 2.92a9.89 9.89 0 0 1 2.91 7.03c0 5.49-4.46 9.96-9.95 9.96zm5.46-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+                Pedir Semana
+              </a>
+            </div>
+          </div>
+
+          <!-- SOLUCIONARIOS CEPRE-VILLARREAL (UNFV) -->
+          <div class="rounded-2xl border border-obsidian-700 bg-obsidian-900 p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full border border-silver-400 text-white font-mono text-xs font-bold">UNFV • CEPRE-VILLARREAL</span>
+                <span class="font-mono text-[11px] text-silver-400">Completo</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Solucionarios CEPRE-VILLAREAL</h3>
+              <p class="text-xs sm:text-sm text-silver-400 mt-2">
+                Resoluciones del Libro Ceprevi y ciclos Ceprevi 2023 A / 2023 B organizadas por curso para postulantes UNFV.
+              </p>
+
+              <div id="ceprevi-feed" class="mt-4 space-y-2 text-xs font-mono text-silver-300">
+                <div class="p-3 rounded-xl bg-obsidian-950 border border-obsidian-800 flex items-center justify-between">
+                  <span>Libro Ceprevi + Ciclos A/B</span>
+                  <span class="text-silver-400">Drive</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-obsidian-800 flex flex-col gap-2.5">
+              <a href="https://drive.google.com/drive/folders/1km7dlbYKDLAQtcy-km9bVmYAvgLQHowx" data-ceprevi-link target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white text-obsidian-950 font-bold text-xs hover:bg-silver-200 transition">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                Abrir CEPREVI
+              </a>
+              <a href="https://wa.me/51912138703?text=Hola%20TioProject,%20busco%20un%20solucionario%20de%20CEPRE-Villarreal." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-obsidian-850 border border-obsidian-700 text-silver-200 font-semibold text-xs hover:bg-obsidian-800 hover:text-white transition">
+                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.46 0 .08 5.38.08 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62A11.94 11.94 0 0 0 12.07 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.21-3.54-8.52zm-8.45 18.48a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.67.96.98-3.58-.24-.37A9.92 9.92 0 0 1 2.12 12c0-5.49 4.46-9.95 9.95-9.95 2.66 0 5.16 1.04 7.04 2.92a9.89 9.89 0 0 1 2.91 7.03c0 5.49-4.46 9.96-9.95 9.96zm5.46-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+                Pedir Curso UNFV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. LOS ESCRITOS DE PROJECT (BIBLIOTECA GENERAL) + BÓVEDA DE SEPARATAS -->
+    <section id="boveda" class="py-16 sm:py-20 border-b border-obsidian-800 bg-obsidian-900/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Banner Destacado: Los Escritos de Project -->
+        <div class="rounded-2xl border border-obsidian-700 bg-gradient-to-br from-obsidian-900 via-obsidian-900 to-obsidian-850 p-6 sm:p-8 mb-8 shadow-xl space-y-6">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div class="space-y-2 max-w-3xl">
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-obsidian-800 border border-obsidian-700 font-mono text-[11px] text-silver-300">
+                <i data-lucide="library" class="w-3.5 h-3.5 text-white"></i>
+                <span>BIBLIOTECA GENERAL OFICIAL • ZERO-LOAD</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Los Escritos de Project</h2>
+              <p class="text-sm sm:text-base text-silver-400 leading-relaxed">
+                Repositorio central organizado por rutas académicas para abrir directo en Drive sin sobrecargar tu navegador.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+              <a href="https://drive.google.com/drive/u/0/folders/1tmkMRWUrau6S8K9vbPQDmPHvncbUigza" data-escritos-link target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-obsidian-950 font-bold text-sm hover:bg-silver-200 transition shadow-md">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                <span>Carpeta Principal (Drive)</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Accesos directos ligeros por sección del Drive -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-4 border-t border-obsidian-800">
+            <a href="https://drive.google.com/drive/folders/167S3641bfG6OpE5ap5q5dDmmHnlIF4DZ" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-obsidian-950/80 border border-obsidian-700 hover:border-white transition group">
+              <span class="font-mono text-[10px] uppercase text-silver-400 block">01 • Ingeniería</span>
+              <span class="text-xs sm:text-sm font-bold text-white group-hover:text-silver-200 mt-0.5 block">Carpeta UNI</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1Ty7rl_24eN2UC1SeWdQmkIRheJQ1cGr0" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-obsidian-950/80 border border-obsidian-700 hover:border-white transition group">
+              <span class="font-mono text-[10px] uppercase text-silver-400 block">02 • DECO</span>
+              <span class="text-xs sm:text-sm font-bold text-white group-hover:text-silver-200 mt-0.5 block">Carpeta San Marcos</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1Qb3--5VOJyB0FqWOWN3yGodamXat_3DH" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-obsidian-950/80 border border-obsidian-700 hover:border-white transition group">
+              <span class="font-mono text-[10px] uppercase text-silver-400 block">03 • UNFV</span>
+              <span class="text-xs sm:text-sm font-bold text-white group-hover:text-silver-200 mt-0.5 block">Carpeta Villarreal</span>
+            </a>
+            <a href="https://drive.google.com/drive/folders/1V4TWLFiLdZCqdBRALyhoaU9ZsJMdO4Bz" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-xl bg-obsidian-950/80 border border-obsidian-700 hover:border-white transition group col-span-2 sm:col-span-1">
+              <span class="font-mono text-[10px] uppercase text-silver-400 block">04 • Desde Cero</span>
+              <span class="text-xs sm:text-sm font-bold text-white group-hover:text-silver-200 mt-0.5 block">Libros Básicos</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. CLUB CAZA-ERRORES + MURO DE DUDAS RESUELTAS -->
+    <section id="caza-errores" class="py-16 sm:py-20 border-b border-obsidian-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10">
+
+          <!-- Left: Reto Dinámico "¿Dónde está el error?" -->
+          <div class="lg:col-span-6">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-rose-500/10 border border-rose-500/30 text-rose-300 font-mono text-xs">
+                <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+                <span>SELLO TIOPROJECT • CASO DEL DÍA</span>
+              </div>
+              <span id="error-daily-badge" class="px-3 py-1 rounded-lg border border-obsidian-700 bg-obsidian-900 text-xs font-mono text-silver-300">
+                Hoy
+              </span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">¿Dónde está el error?</h2>
+            <p class="text-sm text-silver-400 mt-2 mb-6">
+              En nuestras clases introducimos fallas sutiles a propósito para entrenar tu ojo crítico. Cada día se habilita un único caso para toda la comunidad; toca la línea donde está el error:
+            </p>
+
+            <div id="error-hunt-card" class="rounded-2xl border border-obsidian-700 bg-obsidian-900 p-5 sm:p-6 space-y-4"></div>
+          </div>
+
+          <!-- Right: Muro de Dudas Resueltas -->
+          <div class="lg:col-span-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs uppercase tracking-widest text-silver-400">Comunidad Activa</span>
+              <a href="https://wa.me/51912138703?text=Hola%20TioProject,%20tengo%20una%20duda%20en%20un%20problema%20y%20me%20gustar%C3%ADa%20compartirla." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-mono text-white underline underline-offset-4 hover:text-silver-300">
+                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.46 0 .08 5.38.08 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62A11.94 11.94 0 0 0 12.07 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.21-3.54-8.52zm-8.45 18.48a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.67.96.98-3.58-.24-.37A9.92 9.92 0 0 1 2.12 12c0-5.49 4.46-9.95 9.95-9.95 2.66 0 5.16 1.04 7.04 2.92a9.89 9.89 0 0 1 2.91 7.03c0 5.49-4.46 9.96-9.95 9.96zm5.46-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+                <span>+ Enviar mi duda por WhatsApp</span>
+              </a>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">Dudas Resueltas de la Semana</h2>
+            <p class="text-sm text-silver-400 mt-2 mb-6">
+              Consultas reales enviadas por estudiantes y resueltas con criterio paso a paso.
+            </p>
+
+            <div id="solved-doubts-list" class="space-y-4"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CLASES PARTICULARES Y GRUPALES (Reemplaza a Ciclos) -->
+    <section id="clases" class="py-16 sm:py-24 bg-obsidian-900/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Playlists de YouTube (@johanprojectpre) primero -->
+        <div>
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-widest text-silver-400">YouTube • @johanprojectpre</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-1 flex items-center gap-2.5">
+                <span>Playlists de Clases y Solucionarios</span>
+                <svg class="w-5 h-5 text-rose-400 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </h3>
+            </div>
+            <a href="https://www.youtube.com/@johanprojectpre/playlists" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-obsidian-700 bg-obsidian-900 hover:border-white text-xs font-mono text-silver-200 hover:text-white transition self-start sm:self-auto">
+              <span>Ver todas en YouTube</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- Playlist 1 -->
+            <a href="https://youtube.com/playlist?list=PLAsPPWy31WbI&si=KcHg7BdWESaFhabi" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-obsidian-700 bg-obsidian-900 overflow-hidden hover:border-white transition flex flex-col">
+              <div class="relative aspect-video bg-obsidian-950 overflow-hidden">
+                <img src="assets/playlist-yt-1.jpg" style="filter: brightness(0.76) contrast(1.06);" alt="PRESM 2026 II - Solucionarios" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" />
+                <div class="absolute inset-0 bg-obsidian-950/20 group-hover:bg-transparent transition duration-300 pointer-events-none"></div>
+                <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-obsidian-950/90 border border-obsidian-700 font-mono text-[11px] text-white">17 videos</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <h4 class="font-bold text-sm sm:text-base text-white group-hover:text-silver-200 leading-snug">PRESM 2026 II - Solucionarios</h4>
+                <span class="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-silver-400 group-hover:text-white transition">
+                  <span>Ver playlist completa</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </a>
+
+            <!-- Playlist 2 -->
+            <a href="https://youtube.com/playlist?list=PLSvJd16pXUB0&si=c54UI4jNl7OXq1Ug" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-obsidian-700 bg-obsidian-900 overflow-hidden hover:border-white transition flex flex-col">
+              <div class="relative aspect-video bg-obsidian-950 overflow-hidden">
+                <img src="assets/playlist-yt-2.jpg" style="filter: brightness(0.76) contrast(1.06);" alt="Solucionarios Ciclo Intensivo 2027-I PRESM" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" />
+                <div class="absolute inset-0 bg-obsidian-950/20 group-hover:bg-transparent transition duration-300 pointer-events-none"></div>
+                <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-obsidian-950/90 border border-obsidian-700 font-mono text-[11px] text-white">11 videos</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <h4 class="font-bold text-sm sm:text-base text-white group-hover:text-silver-200 leading-snug">Solucionarios Ciclo Intensivo 2027-I PRESM</h4>
+                <span class="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-silver-400 group-hover:text-white transition">
+                  <span>Ver playlist completa</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </a>
+
+            <!-- Playlist 3 -->
+            <a href="https://youtube.com/playlist?list=PLB-1LFzLJev9ZQqXmYplbVrbqIn3ht060&si=4nAh8aNq2JnTuLfN" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-obsidian-700 bg-obsidian-900 overflow-hidden hover:border-white transition flex flex-col">
+              <div class="relative aspect-video bg-obsidian-950 overflow-hidden">
+                <img src="assets/playlist-yt-3.jpg" style="filter: brightness(0.76) contrast(1.06);" alt="Álgebra con el Tío Project" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" />
+                <div class="absolute inset-0 bg-obsidian-950/20 group-hover:bg-transparent transition duration-300 pointer-events-none"></div>
+                <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-obsidian-950/90 border border-obsidian-700 font-mono text-[11px] text-white">3 videos</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <h4 class="font-bold text-sm sm:text-base text-white group-hover:text-silver-200 leading-snug">Álgebra con el Tío Project</h4>
+                <span class="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-silver-400 group-hover:text-white transition">
+                  <span>Ver playlist completa</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </a>
+
+            <!-- Playlist 4 -->
+            <a href="https://youtube.com/playlist?list=PLPKHxiEOTnX0&si=YXjJPXbnj_AmFKEF" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-obsidian-700 bg-obsidian-900 overflow-hidden hover:border-white transition flex flex-col">
+              <div class="relative aspect-video bg-obsidian-950 overflow-hidden">
+                <img src="assets/playlist-yt-4.jpg" style="filter: brightness(0.76) contrast(1.06);" alt="Física con el Tío Project" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" />
+                <div class="absolute inset-0 bg-obsidian-950/20 group-hover:bg-transparent transition duration-300 pointer-events-none"></div>
+                <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-obsidian-950/90 border border-obsidian-700 font-mono text-[11px] text-white">8 videos</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <h4 class="font-bold text-sm sm:text-base text-white group-hover:text-silver-200 leading-snug">Física con el Tío Project</h4>
+                <span class="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-silver-400 group-hover:text-white transition">
+                  <span>Ver playlist completa</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </a>
+
+            <!-- Playlist 5 (6ta de la captura, omitiendo el link repetido) -->
+            <a href="https://youtube.com/playlist?list=PLB-1LFzLJev8qUN3q3CjXLh2g5YTRsGy9&si=TUgnmk_yB5GKrlGM" target="_blank" rel="noopener noreferrer" class="group rounded-2xl border border-obsidian-700 bg-obsidian-900 overflow-hidden hover:border-white transition flex flex-col">
+              <div class="relative aspect-video bg-obsidian-950 overflow-hidden">
+                <img src="assets/playlist-yt-5.jpg" style="filter: brightness(0.76) contrast(1.06);" alt="Solucionario PRESM (Ciclo 2026-I)" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" />
+                <div class="absolute inset-0 bg-obsidian-950/20 group-hover:bg-transparent transition duration-300 pointer-events-none"></div>
+                <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-obsidian-950/90 border border-obsidian-700 font-mono text-[11px] text-white">17 videos</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col justify-between">
+                <h4 class="font-bold text-sm sm:text-base text-white group-hover:text-silver-200 leading-snug">Solucionario PRESM (Ciclo 2026-I)</h4>
+                <span class="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-silver-400 group-hover:text-white transition">
+                  <span>Ver playlist completa</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Clases Particulares y Grupales debajo -->
+        <div class="mt-16 pt-12 border-t border-obsidian-800">
+        <div class="max-w-2xl mb-12">
+          <span class="font-mono text-xs uppercase tracking-widest text-silver-400">Asesoría Directa • TioProject</span>
+          <h2 class="text-2xl sm:text-4xl font-bold text-white mt-1">Clases Particulares y Grupales</h2>
+          <p class="text-sm sm:text-base text-silver-400 mt-3">
+            Acompañamiento a medida según tu ritmo, curso o examen objetivo. Trabajamos con material previo, resolución guiada y corrección de vacíos conceptuales en modalidad virtual o presencial.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Clases Particulares -->
+          <div class="rounded-2xl border border-obsidian-700 bg-obsidian-900 p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full bg-white text-obsidian-950 font-mono text-xs font-bold">PARTICULARES • 1 A 1</span>
+                <span class="font-mono text-xs text-silver-400">Virtual o Presencial</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Clases Particulares Personalizadas</h3>
+              <p class="text-sm text-silver-400 mt-2">
+                Sesiones individuales enfocadas exactamente en los temas o cursos independientes que necesitas dominar, preparar exámenes o destrabar ejercicios.
+              </p>
+              <ul class="mt-6 space-y-3 text-sm text-silver-300">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-white shrink-0 mt-0.5"></i>
+                  <span>Plan adaptado a tu nivel actual (base, intermedio, DECO o UNI).</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-white shrink-0 mt-0.5"></i>
+                  <span>Resolución de guías, seminarios o temas puntuales del temario.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-white shrink-0 mt-0.5"></i>
+                  <span>Coordinación flexible de horarios directamente por WhatsApp.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-obsidian-800">
+              <a href="https://wa.me/51912138703?text=Hola%20TioProject,%20quisiera%20informes%20sobre%20Clases%20Particulares%20(virtual%20o%20presencial)." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-obsidian-950 font-bold text-sm hover:bg-silver-200 transition">
+                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.46 0 .08 5.38.08 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62A11.94 11.94 0 0 0 12.07 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.21-3.54-8.52zm-8.45 18.48a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.67.96.98-3.58-.24-.37A9.92 9.92 0 0 1 2.12 12c0-5.49 4.46-9.95 9.95-9.95 2.66 0 5.16 1.04 7.04 2.92a9.89 9.89 0 0 1 2.91 7.03c0 5.49-4.46 9.96-9.95 9.96zm5.46-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+                Consultar Clases Particulares
+              </a>
+            </div>
+          </div>
+
+          <!-- Clases Grupales -->
+          <div class="rounded-2xl border border-obsidian-700 bg-obsidian-900 p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full border border-silver-400 text-white font-mono text-xs font-bold">GRUPALES • EQUIPOS</span>
+                <span class="font-mono text-xs text-silver-400">Virtual o Presencial</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Clases Grupales y Grupos de Estudio</h3>
+              <p class="text-sm text-silver-400 mt-2">
+                Ideal si deseas formar un grupo con compañeros o sumarte a sesiones grupales reducidas para practicar problemas y discutir estrategias de examen.
+              </p>
+              <ul class="mt-6 space-y-3 text-sm text-silver-300">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-white shrink-0 mt-0.5"></i>
+                  <span>Dinámica participativa con entrenamiento anti-trampas y análisis crítico.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-white shrink-0 mt-0.5"></i>
+                  <span>Apoyo con separatas de la biblioteca y solucionarios de referencia.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-white shrink-0 mt-0.5"></i>
+                  <span>Disponible en formato virtual o presencial previa coordinación.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-obsidian-800">
+              <a href="https://wa.me/51912138703?text=Hola%20TioProject,%20quisiera%20informes%20sobre%20Clases%20Grupales%20(virtual%20o%20presencial)." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-obsidian-800 border border-obsidian-700 text-white font-bold text-sm hover:bg-obsidian-700 hover:border-silver-400 transition">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                Consultar Clases Grupales
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER CON LOGOS CLICKEABLES DE YOUTUBE, FACEBOOK, TIKTOK Y WHATSAPP -->
+  <footer class="border-t border-obsidian-800 bg-obsidian-950 py-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3.5">
+        <img src="assets/logotioproject.jpg" alt="Logo TioProject" class="w-11 h-11 rounded-xl border border-obsidian-700 object-cover" />
+        <div>
+          <p class="font-bold text-white text-sm sm:text-base">TioProject — Project Physics Pre</p>
+          <p class="text-xs text-silver-500">Lima, Perú • Ciencias y Matemáticas Preuniversitarias</p>
+        </div>
+      </div>
+
+      <!-- Logos Clickeables -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5">
+        <a href="https://www.youtube.com/@johanprojectpre" data-youtube-link target="_blank" rel="noopener noreferrer" aria-label="Ir a YouTube de TioProject" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-rose-500/30 bg-obsidian-900 hover:bg-rose-500/15 hover:border-rose-400 text-rose-300 hover:text-rose-200 transition text-xs font-mono font-semibold">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>YouTube</span>
+        </a>
+
+        <a href="https://www.facebook.com/projectphysicspre/?locale=es_LA" data-facebook-link target="_blank" rel="noopener noreferrer" aria-label="Ir a Facebook de TioProject" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-blue-500/30 bg-obsidian-900 hover:bg-blue-500/15 hover:border-blue-400 text-blue-300 hover:text-blue-200 transition text-xs font-mono font-semibold">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          <span>Facebook</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@comunidad_naosu?_r=1&_t=ZS-9BglBUeu6NN" data-tiktok-link target="_blank" rel="noopener noreferrer" aria-label="Ir a TikTok de TioProject" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-cyan-500/30 bg-obsidian-900 hover:bg-cyan-500/15 hover:border-cyan-400 text-cyan-300 hover:text-cyan-200 transition text-xs font-mono font-semibold">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          <span>TikTok</span>
+        </a>
+
+        <a href="https://wa.me/51912138703" target="_blank" rel="noopener noreferrer" aria-label="Escribir al WhatsApp de TioProject" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl border border-emerald-500/30 bg-obsidian-900 hover:bg-emerald-500/15 hover:border-emerald-400 text-emerald-300 hover:text-emerald-200 transition text-xs font-mono font-semibold">
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.46 0 .08 5.38.08 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62A11.94 11.94 0 0 0 12.07 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.21-3.54-8.52zm-8.45 18.48a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.67.96.98-3.58-.24-.37A9.92 9.92 0 0 1 2.12 12c0-5.49 4.46-9.95 9.95-9.95 2.66 0 5.16 1.04 7.04 2.92a9.89 9.89 0 0 1 2.91 7.03c0 5.49-4.46 9.96-9.95 9.96zm5.46-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+          <span>+51 912 138 703</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/51912138703?text=Hola%20TioProject,%20vengo%20desde%20tu%20p%C3%A1gina%20web." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2.5 px-4 py-3 rounded-full bg-white text-obsidian-950 font-bold text-xs sm:text-sm shadow-2xl hover:bg-silver-200 hover:scale-105 transition">
+    <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.46 0 .08 5.38.08 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62A11.94 11.94 0 0 0 12.07 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.21-3.54-8.52zm-8.45 18.48a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.67.96.98-3.58-.24-.37A9.92 9.92 0 0 1 2.12 12c0-5.49 4.46-9.95 9.95-9.95 2.66 0 5.16 1.04 7.04 2.92a9.89 9.89 0 0 1 2.91 7.03c0 5.49-4.46 9.96-9.95 9.96zm5.46-7.45c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.11 3.22 5.11 4.52.71.31 1.27.49 1.7.63.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+    <span class="hidden sm:inline">WhatsApp Directo</span>
+  </a>
+
+
+  <!-- Main Application Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
