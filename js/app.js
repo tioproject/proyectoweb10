@@ -931,7 +931,7 @@ const CONFIG = {
 
   // Opcional: Pega aquí la URL de tu Google Apps Script publicado como Web App
   // para listar automáticamente los archivos nuevos que subas a tus carpetas de Drive:
-  googleAppsScriptUrl: "https://script.google.com/macros/s/AKfycbxkdt_HxTyQwAn3cnPHaorRn-krpljwJ96KQ3Ylm1spUhd0Zc8v-m6sPQg4mKvYsdi8/exec",
+  googleAppsScriptUrl: "https://script.google.com/macros/s/AKfycbyHfjaTcmtge7FpVumgyhSnYwWb-TiIqZQyMOZFGZQf6AAhXhf4jwJPlmhAoSKmlFxR/exec",
   editorPin: "2026" // Clave para el editor independiente de preguntas
 };
 
